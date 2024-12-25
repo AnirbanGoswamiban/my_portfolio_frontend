@@ -116,7 +116,7 @@ const ContactForm = () => {
 
                     <a href="https://github.com/AnirbanGoswamiban" target="_blank" rel="noopener noreferrer">
                         {/* <FaGithub className="text-white text-4xl hover:text-[#e11d48]" /> */}
-                        <img className="h-16 w-16" src="/github.png" alt="" />
+                        <img className="h-16 w-16" src="/github2.png" alt="" />
                     </a>
                 </div>
             </div>
