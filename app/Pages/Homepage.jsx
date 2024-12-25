@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link"; 
 
 export default function Homepage() {
   const [profilePic, setProfilePic] = useState(true);
@@ -13,9 +12,6 @@ export default function Homepage() {
 
     return () => clearInterval(interval); // Clear interval on unmount
   }, []);
-  useEffect(() => {
-    activate();
-  }, []); 
 
   return (
     <div className="flex flex-col h-screen p-4">
@@ -51,7 +47,6 @@ export default function Homepage() {
           in building stunning pixel-perfect interactive and responsive
           websites/applications.
         </div>
-        <Link href="/About">
         <button
             className="px-4 py-2 rounded bg-[#e11d48] text-white hover:bg-[#be163d] mt-5"
             style={{
@@ -60,20 +55,7 @@ export default function Homepage() {
           >
             About Me
           </button>
-          </Link>
       </div>
     </div>
   );
-}
-
-async function activate() {
-  try {
-    await fetch(`${process.env.NEXT_PUBLIC_URL}test`, {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-    });
-  } catch (error) {
-    console.error('Error:', error);
-    alert('An error occurred. Please try again later.');
-  }
 }
