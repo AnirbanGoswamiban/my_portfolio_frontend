@@ -42,7 +42,7 @@ const ContactForm = () => {
 
     return (
         <div className="text-center">
-            <h2 className="text-2xl font-semibold mb-6">Contact Me</h2>
+            <h2 className="text-2xl font-semibold mb-6 mt-5">Contact Me</h2>
             <form className="bg-gray-800 p-6 rounded-lg shadow-md max-w-md mx-auto" onSubmit={handleSubmit}>
                 <div className="mb-4">
                     <label htmlFor="name" className="block text-white">
@@ -103,17 +103,20 @@ const ContactForm = () => {
             <div className="mt-6">
                 <div className="flex justify-center items-center space-x-8">
                     <a href="https://www.linkedin.com/in/anirban-goswami-a73930254/" target="_blank" rel="noopener noreferrer">
-                        <FaLinkedin className="text-white text-4xl hover:text-[#e11d48]" />
+                        {/* <FaLinkedin className="text-white text-4xl hover:text-[#e11d48]" /> */}
+                        <img className="h-16 w-16" src="/linkedln.png" alt="" />
                     </a>
                     <a href="https://x.com/Anirban2114" target="_blank" rel="noopener noreferrer">
-                        <FaTwitter className="text-white text-4xl hover:text-[#e11d48]" />
+                        {/* <FaTwitter className="text-white text-4xl hover:text-[#e11d48]" /> */}
+                        <img className="h-16 w-16" src="/x.png" alt="" />
                     </a>
                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anirbangoswami323@gmail.com" target="_blank" rel="noopener noreferrer">
                         <img className='h-12 w-12' src="mail.png" alt="Mail Icon" />
                     </a>
 
                     <a href="https://github.com/AnirbanGoswamiban" target="_blank" rel="noopener noreferrer">
-                        <FaGithub className="text-white text-4xl hover:text-[#e11d48]" />
+                        {/* <FaGithub className="text-white text-4xl hover:text-[#e11d48]" /> */}
+                        <img className="h-16 w-16" src="/github.png" alt="" />
                     </a>
                 </div>
             </div>
