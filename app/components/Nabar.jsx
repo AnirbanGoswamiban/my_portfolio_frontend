@@ -7,7 +7,8 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleSubmit = async () => {
-    const downloadLink = `${process.env.NEXT_PUBLIC_URL}download-resume`;
+    // let downloadLink = `${process.env.NEXT_PUBLIC_URL}download-resume`;
+    let downloadLink="https://my-portfolio-backend-wb2z.onrender.com/download-resume"
     window.open(downloadLink, '_self');
   };
 

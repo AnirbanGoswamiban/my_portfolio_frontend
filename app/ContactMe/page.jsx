@@ -19,7 +19,9 @@ const ContactForm = () => {
 
         try {
             // Send data to server (replace with your actual backend logic)
-            const response = await fetch(`${process.env.NEXT_PUBLIC_URL}send-mail`, {
+            let url = "https://my-portfolio-backend-wb2z.onrender.com/send-mail"
+            // const response = await fetch(`${process.env.NEXT_PUBLIC_URL}send-mail`, {
+                const response = await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, comment }),
