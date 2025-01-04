@@ -33,6 +33,9 @@ export default function Navbar() {
             <Link href="/About">About Me</Link>
           </div>
           <div className="text-white font-bold cursor-pointer hover:text-red-500">
+            <Link href="/Project">Project</Link>
+          </div>
+          <div className="text-white font-bold cursor-pointer hover:text-red-500">
             <Link href="/ContactMe">Contact</Link>
           </div>
 
@@ -60,6 +63,9 @@ export default function Navbar() {
           </div>
           <div className="text-white font-bold cursor-pointer hover:text-red-500">
             <Link href="/About">About</Link>
+          </div>
+          <div className="text-white font-bold cursor-pointer hover:text-red-500">
+          <Link href="/Project">Project</Link>
           </div>
           <div className="text-white font-bold cursor-pointer hover:text-red-500">
             <Link href="/ContactMe">Contact</Link>

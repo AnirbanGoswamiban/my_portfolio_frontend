@@ -116,60 +116,30 @@ export default function AboutPage() {
         </div>
 
         {sections.map((section, sectionIndex) => (
-          <div
-            key={sectionIndex}
-            className="w-full mt-8"
-            data-index={sectionIndex}
-            ref={(el) => (sectionRefs.current[sectionIndex] = el)}
-          >
-            <div className="font-extrabold text-2xl sm:text-3xl md:text-4xl text-left pl-4 sm:pl-8">
-              {section.title}
-            </div>
-            {section.items.map(({ skill, progress, img }, index) => {
-              const animatedValue = animatedValues[`${sectionIndex}-${index}`] || 0;
-              return (
-                <div key={index} className="flex items-center mt-4 space-x-4 bg-gray-600 bg-opacity-20 p-4 rounded-lg">
-                  <img src={img} alt={skill} className="h-10 w-10 rounded-full" />
-
-                  {/* For Mobile: Display skill and progress side by side */}
-                  <div className="flex w-full justify-between sm:hidden">
-                    <span className="text-sm sm:text-base">{skill}</span>
-                    <span className="text-sm sm:text-base">{animatedValue}%</span>
-                  </div>
-
-                  {/* For larger screens: Display progress bar */}
-                  <div className="hidden sm:flex items-center w-9/12 bg-gray-500 rounded-full h-3 relative">
-                    <div
-                      className={`h-3 rounded-full ${
-                        sectionIndex === 0
-                          ? "bg-yellow-500"
-                          : sectionIndex === 1
-                          ? "bg-blue-500"
-                          : sectionIndex === 2
-                          ? "bg-green-500"
-                          : "bg-pink-500"
-                      }`}
-                      style={{
-                        width: visibleSections[sectionIndex]
-                          ? `${progress}%`
-                          : "0%",
-                        transition: "width 1.5s ease-in-out",
-                      }}
-                    ></div>
-                    <span
-                      className="text-white font-bold absolute right-[-100px]"
-                      style={{
-                        fontSize: "14px",
-                      }}
-                    >
-                      {animatedValue}%
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
+  <div
+    key={sectionIndex}
+    className="w-full mt-8"
+    data-index={sectionIndex}
+    ref={(el) => (sectionRefs.current[sectionIndex] = el)}
+  >
+    <div className="font-extrabold text-2xl sm:text-3xl md:text-4xl text-left pl-4 sm:pl-8">
+      {section.title}
+    </div>
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+      {section.items.map(({ skill, img }, index) => (
+        <div
+          key={index}
+          className="flex flex-col items-center justify-center p-2 sm:p-3 bg-gray-600 bg-opacity-20 rounded-lg group hover:bg-gray-500 hover:bg-opacity-50 transition-all"
+        >
+          <img src={img} alt={skill} className="h-10 w-10 sm:h-12 sm:w-12 rounded-full" />
+          <div className="mt-2 text-center text-sm sm:text-base font-medium group-hover:text-white">
+            {skill}
           </div>
-        ))}
+        </div>
+      ))}
+    </div>
+  </div>
+))}
 
         {/* Work Experience Section */}
         <div className="font-extrabold mt-20 text-center text-3xl sm:text-5xl md:text-6xl">
