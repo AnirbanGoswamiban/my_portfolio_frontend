@@ -80,6 +80,7 @@ export default function AboutPage() {
       title: "Frontend",
       items: [
         { skill: "React", progress: 70, img: "/react.svg" },
+        { skill: "Angular", progress: 70, img: "/angular.svg" },
         { skill: "Redux", progress: 65, img: "/redux.png" },
         { skill: "HTML", progress: 60, img: "/html.png" },
         { skill: "CSS", progress: 50, img: "/css.png" },
