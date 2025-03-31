@@ -19,6 +19,21 @@ const projects = [
       { image: "/6.png", text: "Step 6: Join a voice call for discussions." },
     ],
   },
+  {
+    id: 2,
+    title: "yeetCode",
+    description:
+      "A web platform to practice coding problems with Google SSO authentication, problem search, and embedded code editor.",
+    link: "#", // Add your actual project link here
+    steps: [
+      { image: "/yeetcode1.png", text: "Homepage with problem listings" },
+      { image: "/yeetcode2.png", text: "Google SSO login implementation" },
+      { image: "/yeetcode3.png", text: "Search problems by name and difficulty" },
+      { image: "/yeetcode4.png", text: "Embedded code editor interface" },
+      { image: "/yeetcode5.png", text: "Code commenting functionality" },
+      { image: "/yeetcode6.png", text: "Problem submission and results view" },
+    ],
+  },
   // Add more projects here
 ];
 
