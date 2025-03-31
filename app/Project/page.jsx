@@ -24,7 +24,7 @@ const projects = [
     title: "yeetCode",
     description:
       "A web platform to practice coding problems with Google SSO authentication, problem search, and embedded code editor.",
-    link: "#", // Add your actual project link here
+    link: "https://yeetcode-roan.vercel.app/",
     steps: [
       { image: "/yeetcode1.png", text: "Homepage with problem listings" },
       { image: "/yeetcode2.png", text: "Google SSO login implementation" },
