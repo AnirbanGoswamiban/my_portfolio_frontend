@@ -24,12 +24,13 @@ const projects = [
 
 export default function ProjectsPage() {
   const [activeProject, setActiveProject] = useState(null);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedSteps, setSelectedSteps] = useState([]);
 
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
-        setSelectedImage(null);
+        setShowModal(false);
       }
     };
 
@@ -41,6 +42,11 @@ export default function ProjectsPage() {
 
   const toggleProject = (id) => {
     setActiveProject(activeProject === id ? null : id);
+  };
+
+  const openModal = (steps) => {
+    setSelectedSteps(steps);
+    setShowModal(true);
   };
 
   return (
@@ -58,26 +64,21 @@ export default function ProjectsPage() {
             {activeProject === project.id && (
               <div className="p-4 space-y-4">
                 <p className="text-gray-300">{project.description}</p>
-                <a
-                  href={project.link}
-                  className="text-blue-400 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Visit Project
-                </a>
-                <div className="space-y-4">
-                  {project.steps.map((step, index) => (
-                    <div key={index} className="flex items-center space-x-4">
-                      <img
-                        src={step.image}
-                        alt={step.text}
-                        className="h-32 w-32 rounded-lg cursor-pointer hover:scale-105 transition-transform"
-                        onClick={() => setSelectedImage(step.image)}
-                      />
-                      <p>{step.text}</p>
-                    </div>
-                  ))}
+                <div className="flex space-x-4">
+                  <a
+                    href={project.link}
+                    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Visit Project
+                  </a>
+                  <button
+                    className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+                    onClick={() => openModal(project.steps)}
+                  >
+                    View Instructions
+                  </button>
                 </div>
               </div>
             )}
@@ -93,16 +94,30 @@ export default function ProjectsPage() {
         </Link>
       </div>
 
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"
-          onClick={() => setSelectedImage(null)}
-        >
-          <img
-            src={selectedImage}
-            alt="Expanded view"
-            className="max-h-full max-w-full object-contain cursor-pointer"
-          />
+      {/* Modal for Instructions */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80">
+          <div className="bg-gray-800 p-6 rounded-lg w-11/12 max-w-3xl relative">
+            <button
+              className="absolute top-4 right-4 text-white text-2xl"
+              onClick={() => setShowModal(false)}
+            >
+              ✖
+            </button>
+            <h2 className="text-2xl font-bold mb-4">How to Use</h2>
+            <div className="space-y-4 overflow-y-auto max-h-[70vh]">
+              {selectedSteps.map((step, index) => (
+                <div key={index} className="flex items-center space-x-4">
+                  <img
+                    src={step.image}
+                    alt={step.text}
+                    className="h-24 w-24 rounded-lg"
+                  />
+                  <p className="text-gray-300">{step.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       )}
     </div>
