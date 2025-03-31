@@ -9,6 +9,7 @@ const projects = [
     description:
       "A real-time collaborative coding platform with a chat feature and voice call.",
     link: "https://interview-room-frontend.vercel.app/",
+    techStack: "React, Node.js, Express.js, WebSockets",
     steps: [
       { image: "/0.png", text: "Flowchart of Code Collab" },
       { image: "/1.png", text: "Step 1: Enter your name and create a room." },
@@ -25,6 +26,7 @@ const projects = [
     description:
       "A web platform to practice coding problems with Google SSO authentication, problem search, and embedded code editor.",
     link: "https://yeetcode-roan.vercel.app/",
+    techStack: "Angular, Node.js, Google SSO, Firebase",
     steps: [
       { image: "/yeetcode1.png", text: "Homepage with problem listings" },
       { image: "/yeetcode2.png", text: "Google SSO login implementation" },
@@ -70,6 +72,9 @@ export default function ProjectsPage() {
             </div>
             <div className="p-4 space-y-4">
               <p className="text-gray-300">{project.description}</p>
+              <p className="text-blue-400 font-mono text-sm">
+                Tech Stack: {project.techStack}
+              </p>
               <div className="flex space-x-4">
                 <a
                   href={project.link}
