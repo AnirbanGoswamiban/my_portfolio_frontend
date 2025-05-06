@@ -9,6 +9,7 @@ export default function Navbar() {
   const handleSubmit = async () => {
     // let downloadLink = `${process.env.NEXT_PUBLIC_URL}download-resume`;
     let downloadLink="https://my-portfolio-backend-wb2z.onrender.com/download-resume"
+    downloadLink="https://drive.google.com/file/d/1hJdwmPJX6-kWAT-zbpztCyO54ZeGg5U3/view?usp=sharing"
     window.open(downloadLink, '_self');
   };
 
